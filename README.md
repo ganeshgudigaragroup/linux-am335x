@@ -1,4 +1,5 @@
-linux-am335x
-============
+please use calixto config file calixto_am335xevm_defconfig
+use build.sh config to configure the kernel
 
-linux am335x for calixto evm
+build.sh uimage to build kernel
+modify build.sh for the toolchain

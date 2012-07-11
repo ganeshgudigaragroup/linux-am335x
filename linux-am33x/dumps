@@ -1,0 +1,17 @@
+drivers/mmc/card/block.c: In function 'mmc_blk_issue_rq':
+drivers/mmc/card/block.c:803:15: warning: 'from' may be used uninitialized in this function
+drivers/mmc/card/block.c:803:21: warning: 'nr' may be used uninitialized in this function
+drivers/mmc/card/block.c:803:25: warning: 'arg' may be used uninitialized in this function
+drivers/mtd/chips/cfi_cmdset_0001.c: In function 'cfi_intelext_write_words':
+include/linux/mtd/map.h:330:11: warning: 'r$x$0' may be used uninitialized in this function
+drivers/net/usb/cdc_subset.c:229:2: warning: #warning You need to configure some hardware for this driver
+drivers/usb/musb/musb_gadget.c: In function 'musb_gadget_enable':
+drivers/usb/musb/musb_gadget.c:1077:3: warning: 'double_buffer_not_ok' is deprecated (declared at drivers/usb/musb/musb_core.h:458)
+drivers/usb/musb/musb_gadget.c:1117:3: warning: 'double_buffer_not_ok' is deprecated (declared at drivers/usb/musb/musb_core.h:458)
+drivers/usb/musb/musb_host.c: In function 'musb_rx_reinit':
+drivers/usb/musb/musb_host.c:682:2: warning: 'double_buffer_not_ok' is deprecated (declared at drivers/usb/musb/musb_core.h:458)
+drivers/usb/musb/musb_host.c: In function 'musb_ep_program':
+drivers/usb/musb/musb_host.c:870:4: warning: 'double_buffer_not_ok' is deprecated (declared at drivers/usb/musb/musb_core.h:458)
+In file included from net/ipv4/netfilter/ipt_LOG.c:27:0:
+include/net/netfilter/xt_log.h: In function 'sb_close':
+include/net/netfilter/xt_log.h:50:3: warning: value computed is not used
