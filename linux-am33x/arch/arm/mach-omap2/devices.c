@@ -1314,8 +1314,9 @@ int am33xx_cpsw_init(enum am33xx_cpsw_mac_mode mode, unsigned char *phy_id0,
 		return -EINVAL;
 	}
 
+	printk(KERN_INFO"mii sel val=%x\n",gmii_sel);
 	writel(gmii_sel, AM33XX_CTRL_REGADDR(AM33XX_CONTROL_GMII_SEL_OFFSET));
-
+	printk(KERN_INFO"mii sel val=%x\n",gmii_sel);
 	if (phy_id0 != NULL)
 		am33xx_cpsw_slaves[0].phy_id = phy_id0;
 

@@ -806,7 +806,7 @@ static void setup_calixto_board(void)
 
 	_configure_device(EVM_SK, calixto_dev_cfg, PROFILE_NONE);
 
-	am33xx_cpsw_init(AM33XX_CPSW_MODE_RMII, "0:00", "0.03");
+	am33xx_cpsw_init(AM33XX_CPSW_MODE_MII, "0:00", "0.03");
 }
 
 /* I2C Bus Call */
