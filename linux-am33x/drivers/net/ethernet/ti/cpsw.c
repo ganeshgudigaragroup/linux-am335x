@@ -721,6 +721,8 @@ static void cpsw_set_phy_config(struct cpsw_priv *priv, struct phy_device *phy)
 
 	phy_addr = phy->addr;
 
+	printk(KERN_INFO"phy id for %x\n",phy->addr);
+
 	/* Disable 1 Gig mode support if it is not supported */
 	if (!pdata->gigabit_en)
 		phy->supported &= ~(SUPPORTED_1000baseT_Half |

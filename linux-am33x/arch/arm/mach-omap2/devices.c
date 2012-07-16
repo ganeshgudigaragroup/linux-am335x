@@ -1200,13 +1200,13 @@ static struct cpsw_slave_data am33xx_cpsw_slaves[] = {
 	{
 		.slave_reg_ofs  = 0x208,
 		.sliver_reg_ofs = 0xd80,
-		.phy_id		= "0:00",
+		.phy_id		= "0:03",
 		.dual_emac_reserved_vlan = CPSW_PORT_VLAN_SLAVE_0,
 	},
 	{
 		.slave_reg_ofs  = 0x308,
 		.sliver_reg_ofs = 0xdc0,
-		.phy_id		= "0:03",
+		.phy_id		= "0:00",
 		.dual_emac_reserved_vlan = CPSW_PORT_VLAN_SLAVE_1,
 	},
 };
@@ -1315,6 +1315,7 @@ int am33xx_cpsw_init(enum am33xx_cpsw_mac_mode mode, unsigned char *phy_id0,
 	}
 
 	printk(KERN_INFO"mii sel val=%x\n",gmii_sel);
+	gmii_sel = 0x64;
 	writel(gmii_sel, AM33XX_CTRL_REGADDR(AM33XX_CONTROL_GMII_SEL_OFFSET));
 	printk(KERN_INFO"mii sel val=%x\n",gmii_sel);
 	if (phy_id0 != NULL)

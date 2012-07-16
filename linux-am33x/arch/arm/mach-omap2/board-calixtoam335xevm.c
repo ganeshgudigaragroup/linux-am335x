@@ -72,8 +72,8 @@
 #define GPIO_TO_PIN(bank, gpio) (32 * (bank) + (gpio))
 
 /* BBB PHY IDs */
-#define BBB_PHY_ID		0x7c0f1
-#define BBB_PHY_MASK		0xfffffffe
+#define CALIXTO_PHY_ID		0x7c0f1
+#define CALIXTO_PHY_MASK	0xfffffff6
 
 /* AM335X EVM Phy ID and Debug Registers */
 #define AM335X_EVM_PHY_ID		0x4dd074
@@ -796,6 +796,15 @@ static struct evm_dev_cfg calixto_dev_cfg[] = {
         {NULL, 0, 0},
 };
 
+static int calixto_phy_fixup(struct phy_device *phydev)
+{
+	//phydev->supported &= ~(SUPPORTED_100baseT_Half |
+	//			SUPPORTED_100baseT_Full);
+
+	return 0;
+}
+
+
 //calixto
 static void setup_calixto_board(void)
 {
@@ -806,7 +815,9 @@ static void setup_calixto_board(void)
 
 	_configure_device(EVM_SK, calixto_dev_cfg, PROFILE_NONE);
 
-	am33xx_cpsw_init(AM33XX_CPSW_MODE_MII, "0:00", "0.03");
+	am33xx_cpsw_init(AM33XX_CPSW_MODE_MII, "0:03", "0:00");
+	phy_register_fixup_for_uid(CALIXTO_PHY_ID, CALIXTO_PHY_MASK,
+					calixto_phy_fixup);
 }
 
 /* I2C Bus Call */
