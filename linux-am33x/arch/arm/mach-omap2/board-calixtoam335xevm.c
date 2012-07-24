@@ -830,14 +830,14 @@ static struct i2c_board_info __initdata am335x_i2c0_boardinfo[] = {
 
 static struct omap_musb_board_data musb_board_data = {
         .interface_type = MUSB_INTERFACE_ULPI,
-        .mode           = MUSB_HOST,
+	.mode           = MUSB_HOST,
         .power          = 500,
         .instances      = 1,
 };
 
 static struct omap_musb_board_data musb1_board_data = {
+	.mode           = (MUSB_OTG << 4),
         .interface_type = MUSB_INTERFACE_ULPI,
-        .mode           = MUSB_OTG,
         .power          = 500,
         .instances      = 1,
 };

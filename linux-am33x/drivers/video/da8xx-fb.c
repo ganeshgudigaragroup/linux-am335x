@@ -259,6 +259,20 @@ static struct da8xx_panel known_lcd_panels[] = {
 		.pxl_clk = 7833600,
 		.invert_pxl_clk = 0,
 	},
+	[2] = {
+		.name = "CalixtoVGA",
+		.width = 800,
+		.height = 600,
+		.hfp = 48,
+		.hbp = 80,
+		.hsw = 32,
+		.vfp = 3,
+		.vbp = 11,
+		.vsw = 4,
+		.pxl_clk = 37000000,
+		.invert_pxl_clk = 1,
+	},
+#ifdef TIEVM
 	/* ThreeFive S9700RTWV35TR */
 	[2] = {
 		.name = "TFC_S9700RTWV35TR_01B",
@@ -273,6 +287,7 @@ static struct da8xx_panel known_lcd_panels[] = {
 		.pxl_clk = 30000000,
 		.invert_pxl_clk = 0,
 	},
+#endif
 	/* Newhaven Display */
 	[3] = {
 		.name = "NHD-4.3-ATXI#-T-1",
